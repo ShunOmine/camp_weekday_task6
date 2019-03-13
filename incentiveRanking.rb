@@ -26,8 +26,8 @@
     end
     p = f.gets.to_i
     p.times do |d|
-      number = f.gets.split
-      @r[number[0]] += number[1].to_i
+      cost = f.gets.split
+      @r[cost[0]] += cost[1].to_i
     end
     p @r.sort_by{ | k, v | v }.reverse.to_h
   }
