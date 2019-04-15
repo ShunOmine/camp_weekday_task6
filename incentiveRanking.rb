@@ -18,6 +18,18 @@
   puts "例#{t}の答え"
   File.open("data00#{t}.txt", "r"){ |f|
     # ここにプログラムを記述してください。
+    number = f.gets.to_i
+    member = f.gets.split
+    @r = {}
+    number.times do |d|
+      @r[member[d]] = 0
+    end
+    p = f.gets.to_i
+    p.times do |d|
+      cost = f.gets.split
+      @r[cost[0]] += cost[1].to_i
+    end
+    p @r.sort_by{ | k, v | v }.reverse.to_h
   }
 end
 
